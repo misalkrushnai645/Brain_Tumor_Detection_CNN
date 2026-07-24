@@ -57,6 +57,28 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+import os
+import gdown
+
+# Path where the model will be saved
+MODEL_PATH = "model/brain_tumor_model.keras"
+
+# Check if model file already exists
+if not os.path.exists(MODEL_PATH):
+
+    # Create model folder if it does not exist
+    os.makedirs("model", exist_ok=True)
+
+    # Google Drive model file URL
+    url = "https://drive.google.com/uc?id=1s8Y5okdNpY-j8ZG1fzWRI_qoFR3TEWXd"
+
+    # Download model from Google Drive
+    gdown.download(
+        url,
+        MODEL_PATH,
+        quiet=False
+    )
+
 # Load Trained Model
 
 model = tf.keras.models.load_model(
