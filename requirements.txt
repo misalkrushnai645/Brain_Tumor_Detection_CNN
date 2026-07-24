@@ -4,3 +4,4 @@ NumPy==2.2.6
 Scikit-learn==1.7.2
 Matplotlib==3.10.9
 pillow==12.3.0
+gdown
